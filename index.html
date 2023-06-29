@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html class="loading">
+<head>
+	<meta name="author" content="Doctor">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">    
+    <title>bleepblo0p</title>
+	<link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="theme-assets/css/vendors.css">
+    <link rel="stylesheet" type="text/css" href="theme-assets/css/app-lite.css">
+    <link rel="stylesheet" type="text/css" href="theme-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="theme-assets/css/core/colors/palette-gradient.css">
+	<link rel="shortcut icon" type="image/x-icon" href="Exceed-Logo.ico"/>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+</head>
+<body class="vertical-layout" style="background-color:#141414;" data-color="bg-gradient-x-purple-blue">
+<style> 
+    h5,h4{
+        color:white;
+    }
+    .text-center{
+        background-color:#0e0e0e;
+        border:1px solid #525252;
+        border-radius:5px;
+    }
+    textarea{
+        color:white;
+        resize: none;
+    }
+
+    .text-center::placeholder{
+        color:grey;
+    }
+    .text-center:focus{
+        background-color:#0e1d2c;
+    }
+
+    textarea::-webkit-scrollbar {
+        width: 5px;
+        background-color: #663495; 
+    }
+
+    textarea::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: #663495; 
+    }
+    .lista_reprovadass{
+        color:#747474;
+    }
+    .card-body{
+        background-color: #0e0e0e; 
+        border-radius:5px;
+    }
+    .text-center{
+        border:none;
+    }
+    .badge-success,.btn-success{
+        background-color: #0073e6;
+        color:black	;
+        border:none;
+    }
+    .btn-success:hover{
+        background-color: #c9b63c;
+        border:none;
+        color:black;
+        shadow:hidden;
+    }
+    .aprovadas{
+        background-color: #35a7ff;
+        color:black	;
+    }
+    .badge-danger{
+        background-color: #ff5964;
+        color:black	;
+    }
+    .html body .content .content-wrapper{
+        background-color:#112132;
+    }
+
+    .btn-bg-gradient {
+        background-image: linear-gradient(to right, #0449ff 0%, #376eff  51%, #0449ff  100%);
+        margin: 5px;
+        width:49%;
+        padding: 12px 40px;
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;            
+        box-shadow: 0 0 20px #eee;
+        border-radius: 5px;
+        display: block;
+        -webkit-box-shadow: 0 0 0 0 #514a9d;
+    }
+
+    .btn-bg-gradient:hover {
+        background-position: right center; /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .btn-bg-gradient-x {
+        background-image: linear-gradient(to right, #ee0924 0%, #cc0606 51%, #ee0924  100%);
+        margin: 5px;
+        padding: 12px 45px;
+
+        text-align: center;
+        text-transform: uppercase;
+        transition: 0.5s;
+        background-size: 200% auto;
+        color: white;            
+        box-shadow: 0 0 20px #eee;
+        border-radius: 5px;
+        display: block;
+        -webkit-box-shadow: 0 0 0 0 #514a9d;
+    }
+
+    .btn-bg-gradient-x:hover {
+        background-position: right center; /* change the direction of the change here */
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .statusbar{
+        height:365px;
+        padding-top:50px;
+    }
+    .hr-statusbar{
+        border:none;
+        height:1px;
+        background-color:#3c5c7c;
+    }
+    .colored-toast.swal2-icon-success {
+        background-color: #a5dc86 !important;
+    }
+
+    .footer-C {
+        color:white;
+        text-align: center;
+        font-family: 'Bebas Neue', cursive;
+        font-size: 17px;
+        letter-spacing: 1px;
+    }
+
+    option { 
+        /* Whatever color  you want */
+        background-color: #112132;
+        color: white;
+    }
+    #myButton {
+        background-color: #29292a;
+        color: #fff;
+        border: none;
+        padding: 7px 26px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-family: revert;
+        font-size: 16px;
+        margin-block-end: 10px;
+        margin-block-start: -41px;
+        float: right;
+    }
+
+    #myButton:hover {
+        background-color: #1a1814;
+    }
+</style>
+<div class="app-content content" style="display:block;">
+    <div class="content-wrapper" style="background-color:#141414;">
+        <div class="content-body" >
+            <div class="mt-2"></div>
+            <div class="row" style="max-width: 700px; margin: auto;">    
+                <div class="col-md-8">
+                    <div class="card" style="background-color:transparent;">
+                        <div class="card-body text-center">
+                            <h4 class="mb-2"><strong><a href="bleepblo0p">bleepblo0p</a></strong></h4>
+                            <a style="width:140px;"></a>
+                            <textarea rows="8" class="form-control text-center form-checker mb-2" placeholder="XXXXXXXXXXXXXXXX|XX|XXXX|XXX" style="color:#ffffff94"></textarea>
+
+                            <select name="gate" id="gate" class="form-control" style="margin-bottom: 5px;">
+                                <option></option>
+                                <option style="background:rgba(165, 154, 154, 0.281);color:rgb(255, 208, 0);color:white" value="gate/usd1ccn.php">CCN $1 USD</option>
+                                <option style="background:rgba(165, 154, 154, 0.281);color:rgb(255, 208, 0);color:white" value="gate/usd10ccn.php">CCN $10 USD</option>
+                                <option style="background:rgba(165, 154, 154, 0.281);color:rgb(255, 208, 0);color:white" value="gate/eur1ccn.php">CCN €1 EUR</option>
+                                <option style="background:rgba(165, 154, 154, 0.281);color:rgb(255, 208, 0);color:white" value="gate/eur10ccn.php">CCN €10 EUR</option>
+                                <option style="background:rgba(165, 154, 154, 0.281);color:rgb(255, 208, 0);color:white" value="gate/usd1cvv.php">CVV $1 USD</option>
+                            </select>
+                            <br>
+                            <button class="btn btn-play  btn-bg-gradient text-white" style="width: 45%; float: left;"><i class="fa fa-play" style="margin-right: 3px;"></i>START</button>
+                            <button class="btn btn-stop  btn-bg-gradient-x text-white" style="width: 45%; float: right;" disabled><i class="fa fa-stop" style="margin-right: 3px;"></i>STOP</button>
+                            <span class="badge badge-dark" id="datetime">01/02/2022</span> •  <span class="badge badge-dark" id="timenow">12:00:00 AM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card mb-2" style="background-color:transparent;">
+                        <div class="card-body statusbar" >
+                            <h5>CHARGED<span class="badge badge-success float-right charge">0</span></h5>
+                            <hr class="hr-statusbar">
+                            <h5>LIVE CVV<span class="badge badge-success float-right cvvs">0</span></h5>
+                            <hr class="hr-statusbar">
+                            <h5>LIVE CCN<span class="badge badge-success float-right aprovadas">0</span></h5>
+                            <hr class="hr-statusbar">
+                            <h5>DEAD<span class="badge badge-danger float-right reprovadas">0</span></h5>
+                            <hr class="hr-statusbar">
+                            <h5>TOTAL<span class="badge badge-primary float-right carregadas">0</span></h5>
+                            <hr class="hr-statusbar">
+                            <h5>LIMIT<span class="badge badge-primary float-right">20000</span></h5>
+                            <hr class="hr-statusbar">
+
+                            <label class="form-control-label" style="margin-left: 10px; margin-bottom: 20px; margin-top: 20px;">SELECTED GATE:</label>
+                            <select id="gate_select" class="form-control mb-2" style="margin-bottom: 5px;">
+                                <option value="false">ALL GATES</option>
+                                <option value="gate/usd1ccn.php">CCN $1 USD</option>
+                                <option value="gate/usd10ccn.php">CCN $10 USD</option>
+                                <option value="gate/eur1ccn.php">CCN €1 EUR</option>
+                                <option value="gate/eur10ccn.php">CCN €10 EUR</option>
+                                <option value="gate/usd1cvv.php">CVV $1 USD</option>
+                            </select>
+                            <button id="myButton" onclick="downloadTxtFile()">DOWNLOAD</button>
+                            <button class="btn btn-dark btn-xs" id="copy">COPY</button>
+                            <textarea class="lista_reprovadass form-control" id="lista" rows="7" readonly="" style="color:white;"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="max-width: 700px; margin: auto;">
+                <div class="col-md-12">
+                    <div class="card" style="background-color:transparent;">
+                        <div class="card-body">
+                            <h4 class="mb-2"><strong>CCN</strong></h4>
+                            <textarea id="status" class="form-control mb-2" rows="6" readonly="" style="color:white;"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer-C">
+    <p>bleepblo0p &copy; 2023. All rights reserved | Developed by Doctor</p>
+</div>
+<script src="theme-assets/js/core/libraries/jquery.min.js" type="text/javascript"></script>
+<script src="theme-assets/js/core/libraries/bootstrap.min.js" type="text/javascript"></script>
+<script src="theme-assets/js/core/libraries/jquery-ui.min.js" type="text/javascript"></script>
+<script src="theme-assets/js/plugins/extensions/sweetalerts.min.js" type="text/javascript"></script>
+<script src="theme-assets/js/core/app-menu.min.js" type="text/javascript"></script>
+<script src="theme-assets/js/core/app.min.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/tooltip/tooltip.min.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/popover/popover.min.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/extensions/sweet-alerts.min.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/forms/select/form-select2.min.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/forms/select/form-select2.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/forms/form-tooltip-valid.min.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/forms/form-tooltip-valid.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/modal/components-modal.min.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/extensions/dropzone.min.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/extensions/dropzone.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/forms/checkbox-radio.min.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/forms/checkbox-radio.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/forms/form-validation.min.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/forms/form-validation.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/forms/number-input.min.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/forms/number-input.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/extensions/toastr.min.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/extensions/toastr.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/forms/checkbox-radio.min.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/forms/checkbox-radio.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/forms/number-input.min.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/forms/number-input.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/extensions/swiper.min.js" type="text/javascript"></script>
+<script src="theme-assets/js/scripts/extensions/swiper.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        setInterval("getDateTime()", 1000);
+        setInterval("load_status()", 3000);
+        $("button.btn-play").on("click", function() {
+            var t = $(this);
+            t.hasClass("running") || (t.addClass("running"), $("button.btn-stop").removeAttr("disabled"), getlista(), load_status())
+        }), $("button.btn-stop").on("click", function() {
+            var t = $(this);
+            t.hasClass("running") && (t.removeClass("running"), $("button.btn-play").removeAttr("disabled"), stop())
+        }), $("button.btn.btn-play").click(function() {
+            var t = $("#gate").val(),
+                e = $(".form-checker").val();
+            if (0 == e.length) return alert("Please enter your cards!"), !1;
+            $.ajax({
+                url: t,
+                type: "POST",
+                data: {
+                    data: e
+                },
+                success: function(t) {
+                    console.log(t), "1" == t ? (getlista(), toastr.success("Cards loaded!"), $("button.btn-play").attr("disabled", !0)) : toastr.error("Error while loading cards!")
+                }
+            })
+        })
+    }), document.getElementById("copy").addEventListener("click", function() {
+        copyToClipboard(document.getElementById("lista"))
+    }), $(document).ready(function() {
+        $(".form-checker").on("input propertychange", function() {
+            $(".form-checker").val().split("\n").length >= 1 && $("button.btn-play").removeAttr("disabled")
+        })
+    }), toastr.options = {
+        closeButton: !0,
+        debug: !1,
+        newestOnTop: !1,
+        progressBar: !1,
+        positionClass: "toast-top-right",
+        preventDuplicates: !1,
+        onclick: null,
+        showDuration: "0",
+        hideDuration: "0",
+        timeOut: "0",
+        extendedTimeOut: "0",
+        showEasing: "swing",
+        hideEasing: "linear",
+        showMethod: "fadeIn",
+        hideMethod: "fadeOut"
+    };
+    var loading = 0;
+
+    function getDateTime() {
+        var t = moment().format("DD/MM/YYYY"),
+            e = moment().format("h:mm:ss A");
+        $("#datetime").html(t), $("#timenow").html(e)
+    }
+
+    function getlista() {
+        var t = $("#gate").val(),
+            e = $(".form-checker").val();
+        return 0 == e.length ? (alert("Please enter your cards!"), !1) : void $.ajax({
+            url: t,
+            type: "POST",
+            data: {
+                data: e
+            },
+            success: function(t) {
+                console.log(t), "1" == t ? (load_status(), toastr.success("Cards loaded!"), $("button.btn-play").attr("disabled", !0)) : toastr.error("Error while loading cards!")
+            }
+        })
+    }
+
+    function load_status() {
+        var t = $("#gate_select").val();
+        $.ajax({
+            url: "theme-assets/ccn.txt",
+            type: "GET",
+            success: function(e) {
+                $(".lista_reprovadass").html(e);
+                var n = (e.match(/[\n]/g) || []).length;
+                $(".carregadas").html(n);
+                var a = (e.match(/[Live]/g) || []).length;
+                $(".aprovadas").html(a);
+                var o = (e.match(/[Dead]/g) || []).length;
+                $(".reprovadas").html(o);
+                var s = (e.match(/[Charged]/g) || []).length;
+                $(".charge").html(s);
+                var i = (e.match(/[LIVE CCN]/g) || []).length;
+                $(".cvvs").html(i), loading != n && ($(".form-checker").val(e), loading = n), "false" != t && $(".form-checker").val().split("\n").length >= 1 && $("button.btn-play").attr("disabled", !1)
+            }
+        })
+    }
+
+    function stop() {
+        $.ajax({
+            url: "kill.php",
+            success: function(t) {
+                console.log(t), "1" == t ? (load_status(), toastr.success("Process stopped!"), $("button.btn-stop").attr("disabled", !0)) : toastr.error("Error while stopping process!")
+            }
+        })
+    }
+
+    function copyToClipboard(t) {
+        var e = document.createElement("textarea");
+        e.value = t.value, document.body.appendChild(e), e.select(), document.execCommand("copy"), document.body.removeChild(e), toastr.success("Copied to clipboard!")
+    }
+
+    function downloadTxtFile() {
+        var t = $(".lista_reprovadass").val(),
+            e = new Blob([t], {
+                type: "text/plain;charset=utf-8"
+            }),
+            n = $(".gate_select option:selected").text(),
+            a = document.createElement("a");
+        a.href = window.URL.createObjectURL(e), a.download = "CCN_" + n + ".txt", a.style.display = "none", document.body.appendChild(a), a.click(), document.body.removeChild(a)
+    }
+</script>
+</body>
+
+</html>
